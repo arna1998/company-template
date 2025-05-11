@@ -1,0 +1,138 @@
+import zipfile
+import os
+
+# مسیر فایل‌ها
+html_content = 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شرکت ما</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #005baa;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #004080;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background-color: #e6f0ff;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .services, .portfolio, .contact {
+      margin-bottom: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>شرکت ما</h1>
+    <p>طراحی وب، اپلیکیشن، دیجیتال مارکتینگ</p>
+  </header>
+
+  <nav>
+    <a href="#">خانه</a>
+    <a href="#">درباره ما</a>
+    <a href="#">خدمات</a>
+    <a href="#">نمونه‌کارها</a>
+    <a href="#">تماس با ما</a>
+  </nav>
+
+  <section>
+    <div class="hero">
+      <h2>به وب‌سایت رسمی شرکت ما خوش آمدید</h2>
+      <p>ما بهترین راهکارهای دیجیتال را برای کسب‌وکار شما فراهم می‌کنیم.</p>
+    </div>
+
+    <div class="services">
+      <h3>خدمات ما</h3>
+      <p>طراحی سایت، طراحی اپلیکیشن، سئو و بهینه‌سازی، بازاریابی دیجیتال</p>
+    </div>
+
+    <div class="portfolio">
+      <h3>نمونه کارها</h3>
+      <p>پروژه‌های موفق انجام‌شده برای مشتریان مختلف در صنایع گوناگون</p>
+    </div>
+
+    <div class="contact">
+      <h3>تماس با ما</h3>
+      <p>شماره تماس: ۰۹۱۲۱۲۳۴۵۶۷</p>
+      <p>ایمیل: info@ourcompany.ir</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© تمامی حقوق برای شرکت ما محفوظ است.</p>
+  </footer>
+
+</body>
+</html>
+
+# ذخیره فایل html
+html_path = "/mnt/data/index.html"
+with open(html_path, "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+# ساخت فایل زیپ
+zip_path = "/mnt/data/قالب_HTML_شرکتی.zip"
+with zipfile.ZipFile(zip_path, 'w') as zf:
+    zf.write(html_path, arcname="index.html")
+
+zip_path
